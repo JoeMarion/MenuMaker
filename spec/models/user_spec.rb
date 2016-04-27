@@ -2,10 +2,21 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   # Set up users
-  let(:user) { User.new(first_name: "First", last_name: "Test", email: "test@example.com", password: "password", password_confirmation: "password")}
-  let(:user_no_first_name) { User.new(last_name: "Test", email: "test@example.com", password: "password", password_confirmation: "password")}
-  let(:user_no_last_name) { User.new(first_name: "Test", email: "test@example.com", password: "password", password_confirmation: "password")}
-  let(:user_no_email) { User.new(first_name: "First", last_name: "Test", password: "password", password_confirmation: "password")}
+  let(:user) { User.new(first_name: "First", last_name: "Test",
+                        email: "test@example.com", password: "password",
+                        password_confirmation: "password")}
+
+  let(:user_no_first_name) { User.new(last_name: "Test", email: "test@example.com",
+                                      password: "password",
+                                      password_confirmation: "password")}
+
+  let(:user_no_last_name) { User.new(first_name: "Test", email: "test@example.com",
+                                     password: "password",
+                                     password_confirmation: "password")}
+
+  let(:user_no_email) { User.new(first_name: "First", last_name: "Test",
+                                 password: "password",
+                                 password_confirmation: "password")}
 
   describe 'validations' do
     context 'will raise an error' do
