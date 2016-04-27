@@ -30,6 +30,8 @@ group :test do
   gem "minitest-reporters"
   gem "mocha"
   gem "poltergeist"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
   gem "shoulda-context"
   gem "shoulda-matchers", ">= 3.0.1"
   gem "test_after_commit"
@@ -39,7 +41,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "guard", ">= 2.2.2", :require => false
-  gem "guard-minitest", :require => false
+  gem "guard-rspec", :require => false
   gem "rb-fsevent", :require => false
   gem "terminal-notifier-guard", :require => false
 end
