@@ -1,0 +1,24 @@
+@import "normalize-rails";
+@import "compass";
+@import "susy";
+
+/* Susy global settings */
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  global-box-sizing: border-box
+);
+
+@include border-box-sizing;
+
+// -----------------------------------------------
+
+
+.sidebar-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: red;
+}
