@@ -6,10 +6,12 @@ gem 'pg', '~> 0.15'
 gem 'devise'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'haml'
+gem 'haml-rails', '~> 0.9'
 gem 'susy'
 gem 'breakpoint'
 gem 'compass-rails'
@@ -28,6 +30,8 @@ group :test do
   gem "minitest-reporters"
   gem "mocha"
   gem "poltergeist"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
   gem "shoulda-context"
   gem "shoulda-matchers", ">= 3.0.1"
   gem "test_after_commit"
@@ -37,7 +41,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "guard", ">= 2.2.2", :require => false
-  gem "guard-minitest", :require => false
+  gem "guard-rspec", :require => false
   gem "rb-fsevent", :require => false
   gem "terminal-notifier-guard", :require => false
 end
