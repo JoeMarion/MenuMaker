@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  it { is_expected.to have_many(:meals) }
+  it { is_expected.to have_many(:ingredients) }
+  it { is_expected.to have_many(:categories) }
+
   # Set up users
   let(:user) { User.new(first_name: "First", last_name: "Test",
                         email: "test@example.com", password: "password",

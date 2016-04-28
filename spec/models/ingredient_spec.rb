@@ -9,7 +9,7 @@ RSpec.describe Ingredient, type: :model do
                             email: "joe@example.com", password: "password",
                             password_confirmation: "password") }
 
-  let(:category) { Category.create!(section: "Dairy") }
+  let(:category) { user.categories.create!(section: "Dairy") }
 
   let(:ingredient) { user.ingredients.create!(name: "Colby Jack Cheese",
                                               category: category) }
@@ -29,6 +29,10 @@ RSpec.describe Ingredient, type: :model do
         no_user_ingredient.save
         expect(no_user_ingredient.errors[:has_user_id]).to include("must be created by user")
       end
+    end
+
+    it 'saves the Ingredient when a User creates an ingredient with a name' do
+      expect{ingredient.save}.to change{Ingredient.count}.by(1)
     end
   end
 end

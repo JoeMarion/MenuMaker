@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
   has_many :meals
   has_many :ingredients
+  has_many :categories
 end
