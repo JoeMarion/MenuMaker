@@ -1,0 +1,31 @@
+@import "normalize-rails";
+@import "compass";
+@import "susy";
+
+/* Susy global settings */
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  global-box-sizing: border-box
+);
+
+@include border-box-sizing;
+
+// -----------------------------------------------
+
+.navbar-container {
+  @include container;
+  background-color: #0D82DF;
+  .open-menu {
+    @include span(1);
+    padding: 1em;
+    img {
+      height: 2em;
+    }
+  }
+  .menu-maker {
+    @include span(2.5 last);
+    color: white;
+  }
+}
