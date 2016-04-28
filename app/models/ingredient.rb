@@ -4,4 +4,14 @@ class Ingredient < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :user
+
+  validates :name, presence: true
+  validate :has_user_id
+  private
+
+  # Checks if there is a user_id associated with ingredient
+  # DRY it up with concerns
+  def has_user_id
+    errors.add(:has_user_id, 'must be created by user') if self.user.nil?
+  end
 end
