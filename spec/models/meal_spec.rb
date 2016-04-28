@@ -21,5 +21,9 @@ RSpec.describe Meal, type: :model do
         expect(no_user_meal.errors[:has_user_id]).to include("must be created by user")
       end
     end
+
+    it 'saves the Meal when a User creates a meal with a name' do
+      expect{meal.save}.to change{Meal.count}.by(1)
+    end
   end
 end
