@@ -1,7 +1,7 @@
 class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
-      t.string :section
+      t.string :section, default: "Misc"
 
       t.timestamps null: false
     end

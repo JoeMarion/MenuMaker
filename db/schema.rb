@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160426203810) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
