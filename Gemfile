@@ -42,6 +42,7 @@ group :development do
   gem 'spring'
   gem "guard", ">= 2.2.2", :require => false
   gem "guard-rspec", :require => false
+  gem 'pry'
   gem "rb-fsevent", :require => false
   gem "terminal-notifier-guard", :require => false
 end
