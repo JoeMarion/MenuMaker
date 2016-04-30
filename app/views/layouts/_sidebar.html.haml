@@ -3,7 +3,7 @@
     %i.fa.fa-times.fa-2x{"aria-hidden":"true"}
   - if current_user
     %h3
-      = @user.first_name
+      = current_user.first_name
     .log-out
       = link_to "Log out", logout_path
   - else
