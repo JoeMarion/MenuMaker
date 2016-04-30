@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
 
-  has_many :quizzes
+  has_many :meals
+  has_many :ingredients
+  has_many :categories
 
   before_save { self.email = email.downcase }
   validates :first_name, presence: true

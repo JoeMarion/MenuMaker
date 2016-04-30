@@ -13,10 +13,10 @@ RSpec.feature "Menus", type: :feature do
       created_complete_meal("Chicken Salad")
     end
 
-    it "has a current user" do
+    xit "has a current user" do
       puts user
       expect(user).not_to be(nil)
     end
-    it "shows completed meal, in the meal index"
+    xit "shows completed meal, in the meal index"
   end
 end

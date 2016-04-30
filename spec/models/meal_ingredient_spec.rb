@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MealIngredient, type: :model do
-  let(:user) { User.create!(first_name: "Joe",
-                            last_name: "Tester",
-                            email: "joe@example.com",
-                            password: "password",
-                            password_confirmation: "password")}
+  let(:user) { FactoryGirl.create(:user) }
 let(:meal) { user.meals.create!(name: "Grool") }
 let(:category) { user.categories.create!(section: "Dairy") }
 let(:ingredient) { user.ingredients.create!(name: "Slop", category: category) }

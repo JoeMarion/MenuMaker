@@ -6,21 +6,13 @@ RSpec.describe User, type: :model do
   it { is_expected.to have_many(:categories) }
 
   # Set up users
-  let(:user) { User.new(first_name: "First", last_name: "Test",
-                        email: "test@example.com", password: "password",
-                        password_confirmation: "password")}
+  let(:user) { FactoryGirl.build(:user) }
 
-  let(:user_no_first_name) { User.new(last_name: "Test", email: "test@example.com",
-                                      password: "password",
-                                      password_confirmation: "password")}
+  let(:user_no_first_name) { FactoryGirl.build(:user, first_name: "") }
 
-  let(:user_no_last_name) { User.new(first_name: "Test", email: "test@example.com",
-                                     password: "password",
-                                     password_confirmation: "password")}
+  let(:user_no_last_name) { FactoryGirl.build(:user, last_name: "") }
 
-  let(:user_no_email) { User.new(first_name: "First", last_name: "Test",
-                                 password: "password",
-                                 password_confirmation: "password")}
+  let(:user_no_email) { FactoryGirl.build(:user, email: "") }
 
   describe 'validations' do
     context 'will raise an error' do

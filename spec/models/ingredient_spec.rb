@@ -5,9 +5,7 @@ RSpec.describe Ingredient, type: :model do
   it { is_expected.to belong_to(:user) }
   it { is_expected.to have_many(:meals).through(:meal_ingredients) }
 
-  let(:user) { User.create!(first_name: "Joe", last_name: "Tester",
-                            email: "joe@example.com", password: "password",
-                            password_confirmation: "password") }
+  let(:user) { FactoryGirl.create(:user) }
 
   let(:category) { user.categories.create!(section: "Dairy") }
 

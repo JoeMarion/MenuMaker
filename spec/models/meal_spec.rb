@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Meal, type: :model do
-  let(:user) { User.create!(first_name: "Joe",
-                            last_name: "Tester",
-                            email: "joe@example.com",
-                            password: "password",
-                            password_confirmation: "password")}
+  let(:user) { FactoryGirl.create(:user) }
   let(:meal) { user.meals.new(name: "Turkey Sandwich") }
   let(:no_name_meal) { user.meals.new(name:"") }
   let(:no_user_meal) { Meal.new(name: "No user sandwich") }

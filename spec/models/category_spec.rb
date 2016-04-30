@@ -4,9 +4,7 @@ RSpec.describe Category, type: :model do
   it { is_expected.to have_many(:ingredients) }
   it { is_expected.to belong_to(:user) }
 
-  let(:user) { User.create!(first_name: "Joe", last_name: "Tester",
-                            email: "joe@example.com", password: "password",
-                            password_confirmation: "password") }
+  let(:user) { FactoryGirl.create(:user) }
 
   let(:category) { user.categories.create!(section: "Dairy")}
   let(:no_user_category) { Category.new(section: "Dairy")}
