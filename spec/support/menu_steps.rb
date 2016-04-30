@@ -2,11 +2,11 @@ module MenuSteps
   def login_user(user)
     visit '/login'
     within("#new_user") do
-      fill_in 'Email', with: user.email
+      fill_in 'Email', with: "joe@example.com"
       fill_in 'Password', with: 'password'
     end
     click_button 'Log in'
-    expect(page).to have_content 'Signed in successfully.'
+    debugger
   end
 
   def visit_meal_form(user)

@@ -18,6 +18,7 @@ gem 'compass-rails'
 gem 'figaro'
 gem 'normalize-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'warden'
 
 group :development, :test do
   gem 'byebug'
