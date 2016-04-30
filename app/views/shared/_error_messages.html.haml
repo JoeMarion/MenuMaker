@@ -1,0 +1,6 @@
+- if @user.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      %p
+        - @user.errors.full_messages.each do |msg|
+          = "#{msg}."

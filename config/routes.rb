@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
   get 'pages/index'
+  get 'login', to: "sessions#new"
+  get 'signup', to: "users#new"
+  get 'logout', to: "sessions#destroy"
 
   root to: "pages#home"
-  devise_for :users, controllers: { registrations: "registrations"}
 
   resources :users do
     resources :menus, only: [:index, :create, :show, :destroy, :update]
   end
 
-  devise_scope :user do
-    get 'login', to: "devise/sessions#new"
-    get 'signup', to: "devise/registrations#new"
-    get 'logout', to: "devise/sessions#destroy"
-  end
+
 end

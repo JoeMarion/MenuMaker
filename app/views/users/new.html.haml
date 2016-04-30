@@ -1,0 +1,28 @@
+= provide(:title, 'Sign Up')
+
+%h1 Sign up
+
+.app-errors
+  = render 'shared/error_messages'
+
+= form_for(@user) do |f|
+  .first_name
+    = f.label :first_name, autofocus: true
+    = f.text_field :first_name
+  .last_name
+    = f.label :last_name
+    = f.text_field :last_name
+  .user_name
+    = f.label :username
+    = f.text_field :username
+  .email
+    = f.label :email
+    = f.text_field :email
+  .password
+    = f.label :password
+    = f.password_field :password
+  .password_confirm
+    = f.label :password_confirmation, "Confirmation"
+    = f.password_field :password_confirmation
+  .submit
+    = f.submit "Create my account", class: "submit-but"
