@@ -17,6 +17,7 @@ $susy: (
 .navbar-container {
   @include container;
   background-color: #0D82DF;
+  border-bottom: 2px solid #3753DC;
   .open-menu {
     @include span(1);
     padding: 1em;
@@ -25,7 +26,12 @@ $susy: (
     }
   }
   .menu-maker {
-    @include span(2.5 last);
+    @include span(3 last);
     color: white;
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 2rem;
+    }
   }
 }

@@ -16,9 +16,13 @@ $susy: (
 
 
 .sidebar-container {
+  @include span(2.5);
   display: none;
   position: absolute;
   left: 0;
   height: 100%;
   background-color: red;
+  .close-sidebar {
+    @include span(2.5 last);
+  }
 }

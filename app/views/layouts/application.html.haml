@@ -18,6 +18,8 @@
   %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css", :rel => "stylesheet"}/
 
 %body
+  .sidebar-container
+    = render 'layouts/sidebar'
   .flash
     - flash.each do |message_type, message|
       %div{class: "alert-#{message_type} alert"}
@@ -25,8 +27,6 @@
   .navbar-container
     = render 'layouts/navbar'
 
-  .sidebar-container
-    = render 'layouts/sidebar'
 
   .app-container
     = yield
