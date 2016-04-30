@@ -1,0 +1,11 @@
+.sidebar
+  - if current_user
+    %h3
+      = @user.first_name
+    .log-out
+      = link_to "Log out", logout_path
+  - else
+    .log-in
+      = link_to "Log in", login_path
+    .sign-up
+      = link_to "Sign up", signup_path

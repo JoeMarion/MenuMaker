@@ -1,0 +1,35 @@
+!!!
+%html
+%head
+  %title= "#{yield(:title)} | Menu Maker"
+
+  // Set Viewport
+
+  %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+
+  // Stylesheets
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+
+
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+  // Font Awesome
+  %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css", :rel => "stylesheet"}/
+
+%body
+  .flash
+    - flash.each do |message_type, message|
+      %div{class: "alert-#{message_type} alert"}
+        = message
+  .navbar-container
+    = render 'layouts/navbar'
+
+  .sidebar-container
+    = render 'layouts/sidebar'
+
+  .app-container
+    = yield
+
+  .footer-container
+    = render 'layouts/footer'
