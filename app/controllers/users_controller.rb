@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user= User.new(user_params)
     if @user.save
-      log_in @user
+      warden.set_user(@user)
       flash[:success] = "Welcome to Menu Maker!"
       redirect_to @user
     else

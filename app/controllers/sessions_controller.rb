@@ -1,22 +1,16 @@
 class SessionsController < ApplicationController
 
   def new
+    flash.now.alert = warden.message if warden.message.present?
   end
 
   def create
-    user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      redirect_to root_url, notice: "Logged in!"
-    else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
-    end
-
+    warden.authenticate!
+    redirect_to root_url, notice: "Logged in!"
   end
 
   def destroy
-    log_out
+    warden.logout
     redirect_to root_url
   end
 end
