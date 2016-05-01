@@ -18,5 +18,6 @@ RSpec.feature "Menus", type: :feature do
       expect(user).not_to be(nil)
     end
     xit "shows completed meal, in the meal index"
+
   end
 end

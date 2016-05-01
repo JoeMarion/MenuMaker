@@ -26,6 +26,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "selenium-webdriver"
   gem "connection_pool"
   gem "launchy"
   gem "minitest-reporters"
