@@ -1,0 +1,16 @@
+= provide(:title, 'Log in')
+
+%h1 Log in
+
+= form_for(:session, url: login_path) do |f|
+
+  .email
+    = f.label :email
+    = f.text_field :email
+  .password
+    = f.label :password
+    = f.password_field :password
+  .submit
+    = f.submit "Log in", class: "submit-but"
+.new_user
+  = link_to 'New user?', signup_path
