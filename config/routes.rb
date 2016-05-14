@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :users do
-    resources :menus, only: [:index, :create, :show, :destroy, :update]
+    resources :menus, only: [:index, :new, :create, :show, :destroy, :update]
   end
 
 

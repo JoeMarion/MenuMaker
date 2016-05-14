@@ -1,2 +1,11 @@
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+.home-container
+  %h1 Grocery Shopping
+  %h3 made easy
+
+  # Display link to Menu index if the user is logged in
+  .menu-link
+    = link_to "Menus", user_menus_path(@user) if logged_in?
+  .about-link
+    = link_to "About", root_path
+  .contact-link
+    = link_to "Contact", root_path

@@ -3,6 +3,7 @@ class Meal < ActiveRecord::Base
   has_many :ingredients, through: :meal_ingredients
 
   belongs_to :user
+  belongs_to :menu
 
   validates :name, presence: true
   validate :has_user_id

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :meals
   has_many :ingredients
   has_many :categories
+  has_many :menus
 
   before_save { self.email = email.downcase }
   validates :first_name, presence: true
